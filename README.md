@@ -81,6 +81,10 @@ That's it, you have a running Docker container.
 
 If you are a complete Docker newbie, you should probably follow the [series of tutorials](https://docs.docker.com/engine/getstarted/) now.
 
+##Windows
+
+Oh for the windows folk same as mac just install the docker tool box as per the [Tutorial For windows](https://docs.docker.com/docker-for-windows/install/)
+
 ## Containers
 
 [Your basic isolated Docker process](http://etherealmind.com/basics-docker-containers-hypervisors-coreos/). Containers are to Virtual Machines as threads are to processes. Or you can think of them as chroots on steroids.
