@@ -101,7 +101,7 @@ Normally if you run a container without options it will start and stop immediate
 
 If you want a transient container, `docker run --rm` will remove the container after it stops.
 
-If you want to map a directory on the host to a docker container, `docker run -v $HOSTDIR:$DOCKERDIR`. Also see [Volumes](https://github.com/wsargent/docker-cheat-sheet/#volumes).
+If you want to map a directory on the host to a docker container, `docker run -v $HOSTDIR:$DOCKERDIR`. Also see [Volumes](https://github.com/masterxavierfox/ultimate-docker-cheat-sheet/#volumes).
 
 If you want to remove also the volumes associated with the container, the deletion of the container must include the `-v` switch like in `docker rm -v`.
 
@@ -133,13 +133,13 @@ You can limit CPU, either using a percentage of all CPUs, or by using specific c
 For example, you can tell the [`cpu-shares`](https://docs.docker.com/engine/reference/run/#/cpu-share-constraint) setting.  The setting is a bit strange -- 1024 means 100% of the CPU, so if you want the container to take 50% of all CPU cores, you should specify 512.  See https://goldmann.pl/blog/2014/09/11/resource-management-in-docker/#_cpu for more:
 
 ```
-docker run -ti --c 512 agileek/cpuset-test
+docker run -ti --c 512 radioafricagroup/dejavu
 ```
 
 You can also only use some CPU cores using [`cpuset-cpus`](https://docs.docker.com/engine/reference/run/#/cpuset-constraint).  See https://agileek.github.io/docker/2014/08/06/docker-cpuset/ for details and some nice videos:
 
 ```
-docker run -ti --cpuset-cpus=0,4,6 agileek/cpuset-test
+docker run -ti --cpuset-cpus=0,4,6 radioafricagroup/dejavu
 ```
 
 Note that Docker can still **see** all of the CPUs inside the container -- it just isn't using all of them.  See https://github.com/docker/docker/issues/20770 for more details.
@@ -191,7 +191,7 @@ https://docs.docker.com/engine/reference/run/#/runtime-privilege-and-linux-capab
 
 `docker ps -a` shows running and stopped containers.
 
-`docker stats --all` shows a running list of containers.
+`docker stats --all` shows resource usage statisticts for all running containers.
 
 ### Import / Export
 
@@ -202,7 +202,7 @@ https://docs.docker.com/engine/reference/run/#/runtime-privilege-and-linux-capab
 
 * [`docker exec`](https://docs.docker.com/engine/reference/commandline/exec) to execute a command in container.
 
-To enter a running container, attach a new shell process to a running container called foo, use: `docker exec -it foo /bin/bash`.
+To enter a running container, attach a new shell process to a running container called dejavu, use: `docker exec -it dejavu /bin/bash`.
 
 ## Images
 
@@ -313,7 +313,7 @@ Also see the [mailing list](https://groups.google.com/a/dockerproject.org/forum/
 [The configuration file](https://docs.docker.com/engine/reference/builder/). Sets up a Docker container when you run `docker build` on it. Vastly preferable to `docker commit`.  
 
 Here are some common text editors and their syntax highlighting modules you could use to create Dockerfiles:
-* If you use [jEdit](http://jedit.org), I've put up a syntax highlighting module for [Dockerfile](https://github.com/wsargent/jedit-docker-mode) you can use.
+* If you use [jEdit](http://jedit.org), You can get a syntax highlighting module here [Dockerfile](https://github.com/wsargent/jedit-docker-mode).
 * [Sublime Text 2](https://packagecontrol.io/packages/Dockerfile%20Syntax%20Highlighting)
 * [Atom](https://atom.io/packages/language-docker)
 * [Vim](https://github.com/ekalinin/Dockerfile.vim)
@@ -345,6 +345,8 @@ Here are some common text editors and their syntax highlighting modules you coul
 ### Tutorial
 
 * [Flux7's Dockerfile Tutorial](http://flux7.com/blogs/docker/docker-tutorial-series-part-3-automation-is-the-word-using-dockerfile/)
+* [Docker Curriculum](https://docker-curriculum.com)
+* [Get Started With Docker](https://docs.docker.com/get-started/)
 
 ### Examples
 
@@ -353,6 +355,7 @@ Here are some common text editors and their syntax highlighting modules you coul
 * [Michael Crosby](http://crosbymichael.com/) has some more [Dockerfiles best practices](http://crosbymichael.com/dockerfile-best-practices.html) / [take 2](http://crosbymichael.com/dockerfile-best-practices-take-2.html).
 * [Building Good Docker Images](http://jonathan.bergknoff.com/journal/building-good-docker-images) / [Building Better Docker Images](http://jonathan.bergknoff.com/journal/building-better-docker-images)
 * [Managing Container Configuration with Metadata](https://speakerdeck.com/garethr/managing-container-configuration-with-metadata)
+* [Gotchas](http://kimh.github.io/blog/en/docker/gotchas-in-writing-dockerfile-en/)
 
 ## Layers
 
@@ -787,7 +790,7 @@ Here's how to contribute to this cheat sheet.
 
 ### Open README.md
 
-Click [README.md](https://github.com/wsargent/docker-cheat-sheet/blob/master/README.md) <-- this link
+Click [README.md](https://github.com/masterxavierfox/ultimate-docker-cheat-sheet/blob/master/README.md) <-- this link
 
 ![Click This](images/click.png)
 
